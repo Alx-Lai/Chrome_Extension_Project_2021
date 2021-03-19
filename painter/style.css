@@ -1,0 +1,97 @@
+.main_wrapper{
+    align-items: center;
+}
+.canvas{
+    border-style: solid;
+    border-color: aquamarine;
+    position: relative;
+    margin: 0 auto;
+    float: left;
+    /*cursor: crosshair;*/
+}
+.button{
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin: 0 auto;
+    float: left;
+    width: 30px;
+    height: 30px;
+    transition: 0.4s;
+}
+.button_wrapper{
+    position: relative;
+    margin: 0 auto;
+    float: left;
+}
+.color_picker_wrapper{
+    position: relative;
+    margin: 0 auto;
+    float:left;
+}
+.color_button{
+    position: relative;
+    margin: 0 auto;
+    border : 1px solid aquamarine;
+    float: left;
+    width: 30px;
+    height: 30px;
+    transition: 0.4s;
+}
+.button:hover{
+    opacity: 0.3;
+}
+.color_button:hover{
+    opacity: 0.3;
+}
+#black{
+    background-color: black;
+}
+#white{
+    background-color: white;
+}
+#red{
+    background-color: red;
+}
+#orange{
+    background-color: orange;
+}
+#yellow{
+    background-color: yellow;
+}
+#green{
+    background-color: green;
+}
+#blue{
+    background-color: blue;
+}
+#purple{
+    background-color: purple;
+}
+#donothing{
+    background-image: url(images/donothing.png);
+}
+#hide{
+    background-image: url(images/hide.png);
+}
+#fill{
+    background-image: url(images/fill.png);
+}
+#pen{
+    background-image: url(images/pen.png);
+}
+#eraser{
+    background-image: url(images/eraser.png);
+}
+#rectangle{
+    background-image: url(images/rect.png);
+}
+#circle{
+    background-image: url(images/circle.png);
+}
+#download{
+    background-image: url(images/download.png);
+}
+#sprinkle{
+    background-image: url(images/sprinkle.png);
+}
