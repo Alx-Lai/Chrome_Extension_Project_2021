@@ -1,0 +1,126 @@
+.main_wrapper{
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+#canvas{
+    margin: 0 auto;
+    vertical-align: baseline;
+    float: left;
+    left: 0;
+    top : 0;
+}
+.button{
+    /*background-repeat: no-repeat;
+    background-size: cover;*/
+    position: relative !important;
+    margin: 0 auto !important;
+    border : 1px solid aquamarine !important;
+    float: left !important;
+    display: block !important;
+    width: 30px !important;
+    height: 30px !important;
+    transition: 0.4s !important;
+    opacity: 1 !important;
+    border-radius: 0 !important;
+    top: inherit !important;
+    left: inherit !important;
+    right: inherit !important;
+    bottom: inherit !important;
+}                                                                                                                                         
+.button_wrapper{
+    position: absolute !important;
+    top: 0 !important;
+    right: 10% !important;
+    margin: 0 auto !important;
+}
+.color_picker_wrapper{
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    margin: 0 auto;
+}
+.color_button{
+    position: relative !important;
+    margin: 0 auto !important;
+    border : 1px solid aquamarine !important;
+    float: left !important;
+    display: block !important;
+    width: 30px !important;
+    height: 30px !important;
+    transition: 0.4s !important;
+    opacity: 1 !important;
+    border-radius: 0 !important;
+    top: inherit !important;
+    left: inherit !important;
+    right: inherit !important;
+    bottom: inherit !important;
+}
+.button:hover{
+    opacity: 0.3 !important;
+    cursor: pointer !important;
+}
+.color_button:hover{
+    opacity: 0.3 !important;
+    cursor: pointer !important;
+}
+#black{
+    background-color: black;
+}
+#white{
+    background-color: white;
+}
+#red{
+    background-color: red;
+}
+#orange{
+    background-color: orange;
+}
+#yellow{
+    background-color: yellow;
+}
+#green{
+    background-color: green;
+}
+#blue{
+    background-color: blue;
+}
+#purple{
+    background-color: purple;
+}
+#donothing{
+    background-color: wheat;
+    /*background-image: url(https://i.imgur.com/vSWMuFW.png);*/
+}
+#hide{
+    background-color: wheat;
+    /*background-image: url(https://i.imgur.com/Sxu9rvM.png);*/
+}
+#fill{
+    background-color: wheat;
+    /*background-image: url(https://i.imgur.com/Rw8tnoD.png);*/
+}
+#pen{
+    background-color: wheat;
+    /*background-image: url(https://i.imgur.com/ZhlzjZf.png);*/
+}
+#eraser{
+    background-color: wheat;
+    /*background-image: url(https://i.imgur.com/sKlMfJw.png);*/
+}
+#rectangle{
+    background-color: wheat;
+    /*background-image: url(https://i.imgur.com/lbv8VDT.png);*/
+}
+#circle{
+    background-color: wheat;
+    /*background-image: url(https://i.imgur.com/J9hBUNp.png);*/
+}
+#download{
+    background-color: wheat;
+    /*background-image: url(https://i.imgur.com/U34o1RZ.png);*/
+}
+#sprinkle{
+    background-color: wheat;
+    /*background-image: url(https://i.imgur.com/L1USpwL.png);*/
+}
