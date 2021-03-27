@@ -10,7 +10,7 @@
     left: 0;
     top : 0;
 }
-.button{
+.Button{
     /*background-repeat: no-repeat;
     background-size: cover;*/
     position: relative !important;
@@ -21,23 +21,23 @@
     width: 30px !important;
     height: 30px !important;
     transition: 0.4s !important;
-    opacity: 1 !important;
+    opacity: 1;
     border-radius: 0 !important;
-    top: inherit !important;
+    /*top: inherit !important;
     left: inherit !important;
     right: inherit !important;
-    bottom: inherit !important;
+    bottom: inherit !important;*/
 }                                                                                                                                         
 .button_wrapper{
-    position: absolute !important;
-    top: 0 !important;
-    right: 10% !important;
+    position: fixed !important;
+    top: 3vh !important;
+    left: 10vw !important;
     margin: 0 auto !important;
 }
 .color_picker_wrapper{
-    position: absolute;
-    top: 5%;
-    right: 10%;
+    position: fixed;
+    top: 8vh;
+    left: 10vw;
     margin: 0 auto;
 }
 .color_button{
@@ -51,12 +51,12 @@
     transition: 0.4s !important;
     opacity: 1 !important;
     border-radius: 0 !important;
-    top: inherit !important;
+    /*top: inherit !important;
     left: inherit !important;
     right: inherit !important;
-    bottom: inherit !important;
+    bottom: inherit !important;*/
 }
-.button:hover{
+.Button:hover{
     opacity: 0.3 !important;
     cursor: pointer !important;
 }

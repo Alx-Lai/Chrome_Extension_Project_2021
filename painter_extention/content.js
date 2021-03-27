@@ -24,15 +24,15 @@ function createELE(tag,classname,id){
 }
 var main_wrapper = createELE("div","main_wrapper","");
 var button_wrapper = createELE("div","button_wrapper","");
-var button_donothing = createELE("div","button","donothing");
-var button_download = createELE("div","button","download");
-var button_hide = createELE("div","button","hide");
-var button_fill = createELE("div","button","fill");
-var button_pen = createELE("div","button","pen");
-var button_eraser = createELE("div","button","eraser");
-var button_rectangle = createELE("div","button","rectangle");
-var button_circle = createELE("div","button","circle");
-var button_sprinkle = createELE("div","button","sprinkle");
+var button_donothing = createELE("div","Button","donothing");
+var button_download = createELE("div","Button","download");
+var button_hide = createELE("div","Button","hide");
+var button_fill = createELE("div","Button","fill");
+var button_pen = createELE("div","Button","pen");
+var button_eraser = createELE("div","Button","eraser");
+var button_rectangle = createELE("div","Button","rectangle");
+var button_circle = createELE("div","Button","circle");
+var button_sprinkle = createELE("div","Button","sprinkle");
 button_donothing.textContent='無';
 button_download.textContent='載';
 button_hide.textContent='藏';
@@ -43,6 +43,7 @@ button_rectangle.textContent='方';
 button_circle.textContent='圓';
 button_sprinkle.textContent='噴';
 button_wrapper.style.zIndex='999998';
+main_wrapper.style.position='';
 button_wrapper.appendChild(button_donothing);
 button_wrapper.appendChild(button_download);
 button_wrapper.appendChild(button_hide);
@@ -179,12 +180,14 @@ document.getElementById('download').addEventListener('click',()=>{
     link.click();
     link.remove();
 });
-document.getElementById("hide").addEventListener("click",()=>{
+button_hide.addEventListener("click",()=>{
     hide_or_not=!hide_or_not;
     if(hide_or_not){
-        document.getElementById('canvas').style.display='none';
+        canvas.style.display='none';
+        console.log("hide!");
     }else{
-        document.getElementById('canvas').style.display='block';    
+        canvas.style.display='block';
+        console.log("show!");
     }
 });
 document.getElementById('eraser').addEventListener('click',()=>{
