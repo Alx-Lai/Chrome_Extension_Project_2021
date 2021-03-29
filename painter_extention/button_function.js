@@ -1,86 +1,4 @@
-//目前空橢圓 擦子 以及隱藏 無法
-var canvas = document.createElement("canvas");
-canvas.id = "canvas";
-//canvas = document.getElementById('canvas');
-var body = document.body,
-    html = document.documentElement;
-
-var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
-//canvas.height = window.innerHeight;
-canvas.height = height;
-canvas.width = window.innerWidth;
-
-var ctx = canvas.getContext("2d");
-ctx.fillStyle = "black";
-ctx.strokeStyle = "black";
-//ctx.fillRect(0,0,window.innerWidth,window.innerHeight);
-var button_donothing = document.createElement("div");
-function createELE(tag,classname,id){
-    var ret = document.createElement(tag);
-    ret.className +=classname;
-    ret.id = id;
-    ret.style.zIndex='999999';
-    return ret;
-}
-var main_wrapper = createELE("div","main_wrapper","");
-var button_wrapper = createELE("div","button_wrapper","");
-var button_donothing = createELE("div","Button","donothing");
-var button_download = createELE("div","Button","download");
-var button_hide = createELE("div","Button","hide");
-var button_fill = createELE("div","Button","fill");
-var button_pen = createELE("div","Button","pen");
-var button_eraser = createELE("div","Button","eraser");
-var button_rectangle = createELE("div","Button","rectangle");
-var button_circle = createELE("div","Button","circle");
-var button_sprinkle = createELE("div","Button","sprinkle");
-button_donothing.textContent='無';
-button_download.textContent='載';
-button_hide.textContent='藏';
-button_fill.textContent='滿';
-button_pen.textContent='筆';
-button_eraser.textContent='擦';
-button_rectangle.textContent='方';
-button_circle.textContent='圓';
-button_sprinkle.textContent='噴';
-button_wrapper.style.zIndex='999998';
-main_wrapper.style.position='';
-button_wrapper.appendChild(button_donothing);
-button_wrapper.appendChild(button_download);
-button_wrapper.appendChild(button_hide);
-button_wrapper.appendChild(button_fill);
-button_wrapper.appendChild(button_pen);
-button_wrapper.appendChild(button_eraser);
-button_wrapper.appendChild(button_rectangle);
-button_wrapper.appendChild(button_circle);
-button_wrapper.appendChild(button_sprinkle);
-main_wrapper.appendChild(button_wrapper);
-var color_picker_wrapper = createELE("div","color_picker_wrapper","");
-var color_button_black = createELE("div","color_button","black");
-var color_button_white = createELE("div","color_button","white");
-var color_button_red = createELE("div","color_button","red");
-var color_button_orange = createELE("div","color_button","orange");
-var color_button_yellow = createELE("div","color_button","yellow");
-var color_button_green = createELE("div","color_button","green");
-var color_button_blue = createELE("div","color_button","blue");
-var color_button_purple = createELE("div","color_button","purple");
-color_picker_wrapper.style.zIndex='999998';
-canvas.style.zIndex='999990';
-color_picker_wrapper.appendChild(color_button_black);
-color_picker_wrapper.appendChild(color_button_white);
-color_picker_wrapper.appendChild(color_button_red);
-color_picker_wrapper.appendChild(color_button_orange);
-color_picker_wrapper.appendChild(color_button_yellow);
-color_picker_wrapper.appendChild(color_button_green);
-color_picker_wrapper.appendChild(color_button_blue);
-color_picker_wrapper.appendChild(color_button_purple);
-main_wrapper.appendChild(color_picker_wrapper);
-main_wrapper.appendChild(canvas);
-var body = document.getElementsByTagName("body")[0];
-body.appendChild(main_wrapper);
-
-
-
-var canvas_select = document.querySelector('.canvas');
+var canvas = document.getElementById('canvas');
 var canvas_x = canvas.getBoundingClientRect().left;
 var canvas_y = canvas.getBoundingClientRect().top;
 var mode = 'rectangle';
@@ -169,7 +87,7 @@ function sprinkle_event(){
 function sprinkle_refresh(e){
     [mouseX,mouseY]=[e.pageX-canvas_x,e.pageY-canvas_y];
 }
-document.getElementById("donothing").addEventListener("click",()=>{
+document.getElementById('donothing').addEventListener("click",()=>{
     mode = 'donothing';
     console.log('donothing mode');
 });
@@ -180,7 +98,7 @@ document.getElementById('download').addEventListener('click',()=>{
     link.click();
     link.remove();
 });
-button_hide.addEventListener("click",()=>{
+document.getElementById('hide').addEventListener("click",()=>{
     hide_or_not=!hide_or_not;
     if(hide_or_not){
         canvas.style.display='none';
@@ -200,16 +118,14 @@ document.getElementById('sprinkle').addEventListener('click',()=>{
 document.getElementById('fill').addEventListener('click',()=>{
     fill_or_not=!fill_or_not;
     if(fill_or_not){
-        //$('#fill').css('background-image',"url('images/fill.png')");
         document.getElementById('fill').textContent='滿';
         console.log('fill mode');
     }else{
-        //$('#fill').css('background-image',"url('images/not_fill.png')");
         document.getElementById('fill').textContent='空';
         console.log('unfill mode');
     }
 });
-document.getElementById("pen").addEventListener('click',()=>{
+document.getElementById('pen').addEventListener('click',()=>{
     mode = 'pen';
     console.log("pen mode");
 });

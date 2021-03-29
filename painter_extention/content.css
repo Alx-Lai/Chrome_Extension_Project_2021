@@ -1,9 +1,9 @@
 .main_wrapper{
-    position: fixed;
     left: 0;
     top: 0;
 }
 #canvas{
+    position:  absolute;
     margin: 0 auto;
     vertical-align: baseline;
     float: left;
