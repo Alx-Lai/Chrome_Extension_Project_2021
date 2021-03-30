@@ -9,12 +9,12 @@ chrome.storage.local.get("PainterExtensionKey", function (obj) {
         now_data_array = JSON.parse(obj[key]);
     }
     console.log(now_data_array);
-    if(now_data_array['URL']!=null){
+    if(now_data_array[now_url]!=null){
         var image = new Image();
         image.onload = function(){
             ctx.drawImage(image,0,0);
         }
-        image.src = now_data_array['URL'];
+        image.src = now_data_array[now_url];
     }else{
         console.log('fail to load file');
     }
@@ -35,14 +35,10 @@ function add_data(new_key, new_value){
         console.log('Saved', key, testPrefs);
     });
 };
-document.getElementById('purple').addEventListener('click',()=>{
-    add_data('URL', canvas.toDataURL());
+document.getElementById('save').addEventListener('click',()=>{
+    add_data(now_url, canvas.toDataURL());
     console.log(now_data_array);
     chrome.storage.local.get("PainterExtensionKey", function (obj) {
         console.log(obj);
     });
-    /*chrome.storage.local.remove("PainterExtensionKey");
-    chrome.storage.local.get("PainterExtensionKey", function (obj) {
-        console.log(obj);
-    });*/
 });

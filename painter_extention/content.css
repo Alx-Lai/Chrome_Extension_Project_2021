@@ -23,6 +23,7 @@
     transition: 0.4s !important;
     opacity: 1;
     border-radius: 0 !important;
+    background-color: wheat;
     /*top: inherit !important;
     left: inherit !important;
     right: inherit !important;
@@ -88,39 +89,39 @@
 #purple{
     background-color: purple;
 }
-#donothing{
+/*#donothing{
     background-color: wheat;
-    /*background-image: url(https://i.imgur.com/vSWMuFW.png);*/
+    /*background-image: url(https://i.imgur.com/vSWMuFW.png);
 }
 #hide{
     background-color: wheat;
-    /*background-image: url(https://i.imgur.com/Sxu9rvM.png);*/
+    /*background-image: url(https://i.imgur.com/Sxu9rvM.png);
 }
 #fill{
     background-color: wheat;
-    /*background-image: url(https://i.imgur.com/Rw8tnoD.png);*/
+    /*background-image: url(https://i.imgur.com/Rw8tnoD.png);
 }
 #pen{
     background-color: wheat;
-    /*background-image: url(https://i.imgur.com/ZhlzjZf.png);*/
+    /*background-image: url(https://i.imgur.com/ZhlzjZf.png);
 }
 #eraser{
     background-color: wheat;
-    /*background-image: url(https://i.imgur.com/sKlMfJw.png);*/
+    /*background-image: url(https://i.imgur.com/sKlMfJw.png);
 }
 #rectangle{
     background-color: wheat;
-    /*background-image: url(https://i.imgur.com/lbv8VDT.png);*/
+    /*background-image: url(https://i.imgur.com/lbv8VDT.png);
 }
 #circle{
     background-color: wheat;
-    /*background-image: url(https://i.imgur.com/J9hBUNp.png);*/
+    /*background-image: url(https://i.imgur.com/J9hBUNp.png);
 }
 #download{
     background-color: wheat;
-    /*background-image: url(https://i.imgur.com/U34o1RZ.png);*/
+    /*background-image: url(https://i.imgur.com/U34o1RZ.png);
 }
 #sprinkle{
     background-color: wheat;
-    /*background-image: url(https://i.imgur.com/L1USpwL.png);*/
-}
+    /*background-image: url(https://i.imgur.com/L1USpwL.png);
+}*/
