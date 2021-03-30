@@ -74,7 +74,7 @@ function pen_draw(e){
 function sprinkle_event(){
     if(isDown){
         const r = 20;
-        for(var i=0;i<10;i++){
+        for(var i=0;i<30;i++){
             var dr = Math.random()*r;
             var theta = Math.random()*2*Math.PI;
             var dx = dr*Math.cos(theta);
