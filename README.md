@@ -1,11 +1,13 @@
-It's 2021 Google Chrome Extension Project
+It's 2021 Google Chrome Extension Project by Alex Lai, Andrew Lee, Leyun Fu
 
 known bugs:
 
-no support input save
+pen mode wrong position
 
-no color picker 
+Haven't Support(maybe appear in future):
 
-no eyedropper
+text save
 
-no support clean
+color picker 
+
+eyedropper

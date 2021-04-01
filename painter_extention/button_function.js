@@ -22,7 +22,7 @@ canvas.addEventListener("mousedown",function(e){
     isDown=true;
     console.log('mouse down');
     if(mode == "eraser"){
-        canvas_select.addEventListener("mousemove",erase);
+        canvas.addEventListener("mousemove",erase);
     }else if(mode == 'pen'){
         ctx.beginPath();
         ctx.moveTo(mouseX,mouseY);
@@ -128,6 +128,9 @@ document.getElementById('sprinkle').addEventListener('click',()=>{
 });
 document.getElementById('text').addEventListener('click',()=>{
     mode='text';
+});
+document.getElementById('clean').addEventListener('click',()=>{
+   ctx.clearRect(0,0,canvas.offsetWidth,canvas.offsetHeight); 
 });
 document.getElementById('fill').addEventListener('click',()=>{
     fill_or_not=!fill_or_not;
