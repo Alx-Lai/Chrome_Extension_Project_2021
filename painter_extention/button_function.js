@@ -5,6 +5,7 @@ var mode = 'rectangle';
 var fill_or_not = true;
 var hide_or_not = false;
 var ctx;
+var color = 'black';
 if(canvas.getContext){
     ctx = canvas.getContext("2d");
 }else{
@@ -48,8 +49,18 @@ canvas.addEventListener("mouseup",function(e){
             if(fill_or_not){
                 ctx.fill();   
             }else{
-                ctx.stroke(e);
+                ctx.stroke();
             }
+        }else if(mode=='text'){
+            var new_input = document.createElement('input');
+            //mode='donothing';
+            new_input.setAttribute('type','text');
+            new_input.className='Text';
+            new_input.style.color=color;
+            new_input.style.top=e.pageY;
+            new_input.style.left=e.pageX;
+            main_wrapper.appendChild(new_input);
+            new_input.focus();
         }
     }
     canvas.removeEventListener("mousemove",erase);
@@ -115,6 +126,9 @@ document.getElementById('eraser').addEventListener('click',()=>{
 document.getElementById('sprinkle').addEventListener('click',()=>{
    mode = 'sprinkle'; 
 });
+document.getElementById('text').addEventListener('click',()=>{
+    mode='text';
+});
 document.getElementById('fill').addEventListener('click',()=>{
     fill_or_not=!fill_or_not;
     if(fill_or_not){
@@ -139,41 +153,49 @@ document.getElementById('circle').addEventListener('click',()=>{
 });
 document.getElementById('black').addEventListener('click',()=>{
     console.log('black');
+    color = 'black';
     ctx.fillStyle = 'black';
     ctx.strokeStyle = 'black';
 });
 document.getElementById('white').addEventListener('click',()=>{
     console.log('white');
+    color='white';
     ctx.fillStyle = 'white';
     ctx.strokeStyle = 'white';
 });
 document.getElementById('red').addEventListener('click',()=>{
     console.log('red');
+    color='red';
     ctx.fillStyle = 'red';
     ctx.strokeStyle = 'red';
 });
 document.getElementById('orange').addEventListener('click',()=>{
     console.log('orange');
+    color='orange';
     ctx.fillStyle = 'orange';
     ctx.strokeStyle = 'orange';
 });
 document.getElementById('yellow').addEventListener('click',()=>{
     console.log('yellow');
+    color='yellow';
     ctx.fillStyle = 'yellow';
     ctx.strokeStyle = 'yellow';
 });
 document.getElementById('green').addEventListener('click',()=>{
     console.log('green');
+    color='green';
     ctx.fillStyle = 'green';
     ctx.strokeStyle = 'green';
 });
 document.getElementById('blue').addEventListener('click',()=>{
     console.log('blue');
+    color='blue';
     ctx.fillStyle = 'blue';
     ctx.strokeStyle = 'blue';
 });
 document.getElementById('purple').addEventListener('click',()=>{
     console.log('purple');
+    color='purple';
     ctx.fillStyle = 'purple';
     ctx.strokeStyle = 'purple';
 });

@@ -49,7 +49,7 @@ canvas_select.addEventListener("mouseup",function(e){
             if(fill_or_not){
                 ctx.fill();   
             }else{
-                ctx.stroke(e);
+                ctx.stroke();
             }
         }
     }

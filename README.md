@@ -2,8 +2,10 @@ It's 2021 Google Chrome Extension Project
 
 known bugs:
 
-things we draw cannot move with scroll bar
+no support input save
 
-hollow circle cannot work
+no color picker 
 
-hide function problem
+no eyedropper
+
+no support clean
