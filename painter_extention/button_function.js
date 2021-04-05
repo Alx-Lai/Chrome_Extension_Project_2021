@@ -6,6 +6,7 @@ var fill_or_not = true;
 var hide_or_not = false;
 var ctx;
 var color = 'black';
+var input_id_counter = 0;
 if(canvas.getContext){
     ctx = canvas.getContext("2d");
 }else{
@@ -52,15 +53,31 @@ canvas.addEventListener("mouseup",function(e){
                 ctx.stroke();
             }
         }else if(mode=='text'){
+            var new_input_container = document.createElement('div');
             var new_input = document.createElement('input');
-            //mode='donothing';
+            var new_input_close_button = document.createElement('button');
+            new_input_container.appendChild(new_input);
+            new_input_container.appendChild(new_input_close_button);
+            new_input_container.className='input_container';
+            new_input_container.id='input_container'+input_id_counter;
+            new_input.id='input'+input_id_counter;
             new_input.setAttribute('type','text');
             new_input.className='Text';
             new_input.style.color=color;
             new_input.style.top=e.pageY;
             new_input.style.left=e.pageX;
-            main_wrapper.appendChild(new_input);
+            new_input_close_button.className='input_close_button';
+            new_input_close_button.id='input_close_button'+input_id_counter;
+            main_wrapper.appendChild(new_input_container);
             new_input.focus();
+            var position_info = new_input.getBoundingClientRect();
+            new_input_close_button.style.top=position_info.top;
+            new_input_close_button.style.left = position_info.left+position_info.width;
+            new_input_close_button.onclick = function(){
+                this.parentElement.remove();
+            }
+            input_id_counter++;
+            
         }
     }
     canvas.removeEventListener("mousemove",erase);

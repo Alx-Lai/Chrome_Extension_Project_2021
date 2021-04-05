@@ -80,6 +80,32 @@
     border: none;
     border-bottom: 2px solid blue;
 }
+.input_close_button{
+    opacity: 1;
+    border-radius: 5px;
+    border: none;
+    background-color: red;
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    z-index: 999999;
+    /*display: block;*/
+    visibility: hidden;
+    font: 3px;
+    /*transition: opacity 0.3s;*/
+}
+.Text:focus + .input_close_button{
+    visibility: visible;
+}
+.input_container:hover > .input_close_button{
+    visibility: visible;
+}
+.input_close_button:hover{
+    visibility: visible;
+    opacity: 0.7;
+    border-radius: 5px;
+    border: 1px black solid;
+}
 #black{
     background-color: black;
 }
