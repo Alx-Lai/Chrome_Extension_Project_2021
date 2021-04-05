@@ -75,9 +75,16 @@ canvas.addEventListener("mouseup",function(e){
             new_input_close_button.style.left = position_info.left+position_info.width;
             new_input_close_button.onclick = function(){
                 this.parentElement.remove();
+                var temp=0;
+                for(var i=18;i<this.id.length;i++){
+                    temp*=10;
+                    temp+=parseInt(this.id[i]);
+                }
+                //console.log('temp'+temp);
+                input_set.delete(temp);
             }
+            input_set.add(input_id_counter);
             input_id_counter++;
-            
         }
     }
     canvas.removeEventListener("mousemove",erase);
