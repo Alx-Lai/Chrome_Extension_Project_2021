@@ -178,7 +178,14 @@ document.getElementById('circle').addEventListener('click',()=>{
     mode = 'circle';
     console.log('circle mode'); 
 });
-document.getElementById('black').addEventListener('click',()=>{
+document.getElementById('color_picker').addEventListener('change',()=>{
+    var c_temp = document.getElementById('color_picker').value;
+    color = c_temp;
+    ctx.fillStyle = c_temp;
+    ctx.strokeStyle = c_temp;
+    
+})
+/*document.getElementById('black').addEventListener('click',()=>{
     console.log('black');
     color = 'black';
     ctx.fillStyle = 'black';
@@ -225,4 +232,4 @@ document.getElementById('purple').addEventListener('click',()=>{
     color='purple';
     ctx.fillStyle = 'purple';
     ctx.strokeStyle = 'purple';
-});
+});*/
