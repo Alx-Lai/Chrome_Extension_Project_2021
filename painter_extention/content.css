@@ -32,6 +32,7 @@
     border: 20px solid;
     border-radius: 10px;
     border-color: white;
+    background-color: white;
 }
 
 .Button:hover{
