@@ -266,7 +266,7 @@ function dragElement(elmnt) {
     pos4 = e.clientY;
     // set the element's new position:
     elmnt.style.top = ((elmnt.offsetTop - pos2) > 0 ? (elmnt.offsetTop - pos2) : 0 )+ "px";
-    elmnt.style.left = ((elmnt.offsetLeft - pos1) > 0 ? (elmnt.offsetLeft - pos1) : 0h) + "px";
+    elmnt.style.left = ((elmnt.offsetLeft - pos1) > 0 ? (elmnt.offsetLeft - pos1) : 0) + "px";
   }
 
   function closeDragElement() {
