@@ -1,9 +1,11 @@
+
 var canvas = document.getElementById('canvas');
 var canvas_x = canvas.getBoundingClientRect().left;
 var canvas_y = canvas.getBoundingClientRect().top;
-var mode = 'rectangle';
+var mode = 'donothing';
 var fill_or_not = true;
 var hide_or_not = false;
+var hide_toolbar = false;
 var ctx;
 var color = 'black';
 var input_id_counter = 0;
@@ -64,8 +66,13 @@ canvas.addEventListener("mouseup",function(e){
             new_input.setAttribute('type','text');
             new_input.className='Text';
             new_input.style.color=color;
+            new_input.style.position='absolute'+' !important';
             new_input.style.top=e.pageY;
             new_input.style.left=e.pageX;
+            console.log(e.pageY);
+            console.log(e.pageX);
+            console.log(new_input.style.top);
+            console.log(new_input.style.left);
             new_input_close_button.className='input_close_button';
             new_input_close_button.id='input_close_button'+input_id_counter;
             main_wrapper.appendChild(new_input_container);
@@ -122,18 +129,51 @@ function sprinkle_event(){
 function sprinkle_refresh(e){
     [mouseX,mouseY]=[e.pageX-canvas_x,e.pageY-canvas_y];
 }
-document.getElementById('donothing').addEventListener("click",()=>{
+/*button_hide_toolbar.addEventListener('click',()=>{
+    hide_toolbar = !hide_toolbar;
+    if(hide_toolbar){
+        button_donothing.className = 'Button button_shrink';
+        button_download.className = 'Button button_shrink';
+        button_hide.className = 'Button button_shrink';
+        button_eraser.className = 'Button button_shrink';
+        button_sprinkle.className = 'Button button_shrink';
+        button_text.className = 'Button button_shrink';
+        button_clean.className = 'Button button_shrink';
+        button_fill.className = 'Button button_shrink';
+        button_pen.className = 'Button button_shrink';
+        button_rectangle.className = 'Button button_shrink';
+        button_circle.className = 'Button button_shrink';
+        button_save.className = 'Button button_shrink';
+        button_clear_storage.className = 'Button button_shrink';
+    }else{
+        button_donothing.className = 'Button button_in';
+        button_download.className = 'Button button_in';
+        button_hide.className = 'Button button_in';
+        button_eraser.className = 'Button button_in';
+        button_sprinkle.className = 'Button button_in';
+        button_text.className = 'Button button_in';
+        button_clean.className = 'Button button_in';
+        button_fill.className = 'Button button_in';
+        button_pen.className = 'Button button_in';
+        button_rectangle.className = 'Button button_in';
+        button_circle.className = 'Button button_in';
+        button_save.className = 'Button button_in';
+        button_clear_storage.className = 'Button button_in';
+    }
+});*/
+button_donothing.addEventListener("click",()=>{
     mode = 'donothing';
+    canvas.className='donothing';
     console.log('donothing mode');
 });
-document.getElementById('download').addEventListener('click',()=>{
+button_download.addEventListener('click',()=>{
     var link = document.createElement('a');
     link.download = 'filename.png';
-    link.href = document.getElementById('canvas').toDataURL();
+    link.href = canvas.toDataURL();
     link.click();
     link.remove();
 });
-document.getElementById('hide').addEventListener("click",()=>{
+button_hide.addEventListener("click",()=>{
     hide_or_not=!hide_or_not;
     if(hide_or_not){
         canvas.style.display='none';
@@ -143,93 +183,50 @@ document.getElementById('hide').addEventListener("click",()=>{
         console.log("show!");
     }
 });
-document.getElementById('eraser').addEventListener('click',()=>{
+button_eraser.addEventListener('click',()=>{
     mode = 'eraser';
+    canvas.className='eraser';
     console.log('eraser mode');
 });
-document.getElementById('sprinkle').addEventListener('click',()=>{
-   mode = 'sprinkle'; 
+button_sprinkle.addEventListener('click',()=>{
+    mode = 'sprinkle';
+    canvas.className='sprinkle';
 });
-document.getElementById('text').addEventListener('click',()=>{
+button_text.addEventListener('click',()=>{
     mode='text';
+    canvas.className='text';
 });
-document.getElementById('clean').addEventListener('click',()=>{
+button_clean.addEventListener('click',()=>{
    ctx.clearRect(0,0,canvas.offsetWidth,canvas.offsetHeight); 
 });
-document.getElementById('fill').addEventListener('click',()=>{
+button_fill.addEventListener('click',()=>{
     fill_or_not=!fill_or_not;
     if(fill_or_not){
-        document.getElementById('fill').textContent='滿';
+        button_fill.textContent='滿';
         console.log('fill mode');
     }else{
-        document.getElementById('fill').textContent='空';
+        button_fill.textContent='空';
         console.log('unfill mode');
     }
 });
-document.getElementById('pen').addEventListener('click',()=>{
+button_pen.addEventListener('click',()=>{
     mode = 'pen';
+    canvas.className='pen';
     console.log("pen mode");
 });
-document.getElementById('rectangle').addEventListener('click',()=>{
+button_rectangle.addEventListener('click',()=>{
     mode = 'rectangle';
+    canvas.className='rectangle';
     console.log('rectangle mode');
 });
-document.getElementById('circle').addEventListener('click',()=>{
+button_circle.addEventListener('click',()=>{
     mode = 'circle';
+    canvas.className='circle';
     console.log('circle mode'); 
 });
-document.getElementById('color_picker').addEventListener('change',()=>{
+color_picker.addEventListener('change',()=>{
     var c_temp = document.getElementById('color_picker').value;
     color = c_temp;
     ctx.fillStyle = c_temp;
     ctx.strokeStyle = c_temp;
-    
-})
-/*document.getElementById('black').addEventListener('click',()=>{
-    console.log('black');
-    color = 'black';
-    ctx.fillStyle = 'black';
-    ctx.strokeStyle = 'black';
 });
-document.getElementById('white').addEventListener('click',()=>{
-    console.log('white');
-    color='white';
-    ctx.fillStyle = 'white';
-    ctx.strokeStyle = 'white';
-});
-document.getElementById('red').addEventListener('click',()=>{
-    console.log('red');
-    color='red';
-    ctx.fillStyle = 'red';
-    ctx.strokeStyle = 'red';
-});
-document.getElementById('orange').addEventListener('click',()=>{
-    console.log('orange');
-    color='orange';
-    ctx.fillStyle = 'orange';
-    ctx.strokeStyle = 'orange';
-});
-document.getElementById('yellow').addEventListener('click',()=>{
-    console.log('yellow');
-    color='yellow';
-    ctx.fillStyle = 'yellow';
-    ctx.strokeStyle = 'yellow';
-});
-document.getElementById('green').addEventListener('click',()=>{
-    console.log('green');
-    color='green';
-    ctx.fillStyle = 'green';
-    ctx.strokeStyle = 'green';
-});
-document.getElementById('blue').addEventListener('click',()=>{
-    console.log('blue');
-    color='blue';
-    ctx.fillStyle = 'blue';
-    ctx.strokeStyle = 'blue';
-});
-document.getElementById('purple').addEventListener('click',()=>{
-    console.log('purple');
-    color='purple';
-    ctx.fillStyle = 'purple';
-    ctx.strokeStyle = 'purple';
-});*/

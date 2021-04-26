@@ -1,7 +1,7 @@
 //目前空橢圓 擦子 以及隱藏 無法
 var canvas = document.createElement("canvas");
 canvas.id = "canvas";
-//canvas = document.getElementById('canvas');
+canvas.className='donothing';
 var body = document.body,
     html = document.documentElement;
 
@@ -22,7 +22,8 @@ function createELE(tag,classname,id){
     return ret;
 }
 var main_wrapper = createELE("div","main_wrapper","");
-var button_wrapper = createELE("div","button_wrapper","");
+var tool_wrapper = createELE("div","tool_wrapper","");
+var button_hide_toolbar = createELE("div","Button","hide_toolbar");
 var button_donothing = createELE("div","Button","donothing");
 var button_download = createELE("div","Button","download");
 var button_hide = createELE("div","Button","hide");
@@ -37,6 +38,7 @@ var button_clean = createELE('div',"Button",'clean');
 var button_save = createELE("div","Button","save");
 var button_clear_storage = createELE('div',"Button","clearAll");
 var color_picker = createELE('input','','color_picker');
+button_hide_toolbar.textContent = '現';
 button_donothing.textContent='無';
 button_download.textContent='載';
 button_hide.textContent='藏';
@@ -50,44 +52,26 @@ button_text.textContent='字';
 button_clean.textContent='清';
 button_save.textContent = "存";
 button_clear_storage.textContent ='清存';
-button_wrapper.style.zIndex='999998';
+tool_wrapper.style.zIndex='999998';
 color_picker.setAttribute('type','color');
 main_wrapper.style.position='';
-button_wrapper.appendChild(button_donothing);
-button_wrapper.appendChild(button_download);
-button_wrapper.appendChild(button_hide);
-button_wrapper.appendChild(button_fill);
-button_wrapper.appendChild(button_pen);
-button_wrapper.appendChild(button_eraser);
-button_wrapper.appendChild(button_rectangle);
-button_wrapper.appendChild(button_circle);
-button_wrapper.appendChild(button_sprinkle);
-button_wrapper.appendChild(button_text);
-button_wrapper.appendChild(button_clean);
-button_wrapper.appendChild(button_save);
-button_wrapper.appendChild(button_clear_storage);
-main_wrapper.appendChild(button_wrapper);
-var color_picker_wrapper = createELE("div","color_picker_wrapper","");
-/*var color_button_black = createELE("div","color_button","black");
-var color_button_white = createELE("div","color_button","white");
-var color_button_red = createELE("div","color_button","red");
-var color_button_orange = createELE("div","color_button","orange");
-var color_button_yellow = createELE("div","color_button","yellow");
-var color_button_green = createELE("div","color_button","green");
-var color_button_blue = createELE("div","color_button","blue");
-var color_button_purple = createELE("div","color_button","purple");*/
-color_picker_wrapper.style.zIndex='999998';
+tool_wrapper.appendChild(button_hide_toolbar);
+tool_wrapper.appendChild(button_donothing);
+tool_wrapper.appendChild(button_download);
+tool_wrapper.appendChild(button_hide);
+tool_wrapper.appendChild(button_fill);
+tool_wrapper.appendChild(button_pen);
+tool_wrapper.appendChild(button_eraser);
+tool_wrapper.appendChild(button_rectangle);
+tool_wrapper.appendChild(button_circle);
+tool_wrapper.appendChild(button_sprinkle);
+tool_wrapper.appendChild(button_text);
+tool_wrapper.appendChild(button_clean);
+tool_wrapper.appendChild(button_save);
+tool_wrapper.appendChild(button_clear_storage);
+main_wrapper.appendChild(tool_wrapper);
 canvas.style.zIndex='999990';
-/*color_picker_wrapper.appendChild(color_button_black);
-color_picker_wrapper.appendChild(color_button_white);
-color_picker_wrapper.appendChild(color_button_red);
-color_picker_wrapper.appendChild(color_button_orange);
-color_picker_wrapper.appendChild(color_button_yellow);
-color_picker_wrapper.appendChild(color_button_green);
-color_picker_wrapper.appendChild(color_button_blue);
-color_picker_wrapper.appendChild(color_button_purple);*/
-color_picker_wrapper.appendChild(color_picker);
-main_wrapper.appendChild(color_picker_wrapper);
+tool_wrapper.appendChild(color_picker);
 main_wrapper.appendChild(canvas);
 var body = document.getElementsByTagName("body")[0];
 body.appendChild(main_wrapper);

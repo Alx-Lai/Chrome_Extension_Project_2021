@@ -80,13 +80,9 @@ function add_data(new_url, new_key,new_value){
         console.log('Saved', key, json_data);
     });
 };
-document.getElementById('save').addEventListener('click',()=>{
+button_save.addEventListener('click',()=>{
     add_data(now_url, 'canvas',canvas.toDataURL());
     console.log('input_set size'+ input_set.size);
-    /*input_set.forEach(function(val) {
-        console.log(val);
-        console.log(document.getElementById('input'+val).value);
-    });*/
     add_data(now_url,'input_num',input_set.size);
     var counter = 0;
     input_set.forEach(function(value) {
@@ -102,7 +98,7 @@ document.getElementById('save').addEventListener('click',()=>{
         console.log(obj);
     });
 });
-document.getElementById('clearAll').addEventListener('click',()=>{
+button_clear_storage.addEventListener('click',()=>{
     chrome.storage.local.clear();
     console.log('clear');
 });

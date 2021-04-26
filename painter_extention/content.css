@@ -1,3 +1,4 @@
+
 .main_wrapper{
     left: 0;
     top: 0;
@@ -11,11 +12,9 @@
     top : 0;
 }
 .Button{
-    /*background-repeat: no-repeat;
-    background-size: cover;*/
     position: relative !important;
     margin: 0 auto !important;
-    border : 1px solid aquamarine !important;
+    /*border : 1px solid aquamarine !important;*/
     float: left !important;
     display: block !important;
     width: 30px !important;
@@ -24,44 +23,18 @@
     opacity: 1;
     border-radius: 0 !important;
     background-color: wheat;
-    /*top: inherit !important;
-    left: inherit !important;
-    right: inherit !important;
-    bottom: inherit !important;*/
 }                                                                                                                                         
-.button_wrapper{
-    position: fixed !important;
-    top: 3vh !important;
-    left: 10vw !important;
-    margin: 0 auto !important;
-}
-.color_picker_wrapper{
-    position: fixed;
-    top: 8vh;
+.tool_wrapper{
+    position: absolute;
+    top: 3vh;
     left: 10vw;
     margin: 0 auto;
+    border: 20px solid;
+    border-radius: 10px;
+    border-color: white;
 }
-.color_button{
-    position: relative !important;
-    margin: 0 auto !important;
-    border : 1px solid aquamarine !important;
-    float: left !important;
-    display: block !important;
-    width: 30px !important;
-    height: 30px !important;
-    transition: 0.4s !important;
-    opacity: 1 !important;
-    border-radius: 0 !important;
-    /*top: inherit !important;
-    left: inherit !important;
-    right: inherit !important;
-    bottom: inherit !important;*/
-}
+
 .Button:hover{
-    opacity: 0.3 !important;
-    cursor: pointer !important;
-}
-.color_button:hover{
     opacity: 0.3 !important;
     cursor: pointer !important;
 }
@@ -100,6 +73,9 @@
 .Text:focus + .input_close_button{
     visibility: visible;
 }
+/*.input_container{
+    position: absolute;
+}*/
 .input_container:hover > .input_close_button{
     visibility: visible;
 }
@@ -109,63 +85,43 @@
     border-radius: 5px;
     border: 1px black solid;
 }
-/*#black{
-    background-color: black;
-}
-#white{
+#color_picker{
+    padding: 0px;
     background-color: white;
+    border: 0px;
+    margin: 0px;
+    outline: none;
+    height: 30px;
 }
-#red{
-    background-color: red;
+.Smaller_Button{
+    animation: button_shrink 0.5s;
 }
-#orange{
-    background-color: orange;
+.Smaller_wrapper{
+    animation: wrapper_shrink 0.5s;
 }
-#yellow{
-    background-color: yellow;
+@keyframes button_shrink{
+    0% {width: 30px}
+    100% {width: 0px}
 }
-#green{
-    background-color: green;
+@keyframes button_in{
+    0% {width: 0px}
+    100% {width: 30px}
 }
-#blue{
-    background-color: blue;
+@keyframes wrapper_shrink{
+    0% {border: 20px solid}
+    100% {border: 0px solid}
 }
-#purple{
-    background-color: purple;
+@keyframes wrapper_in{
+    0% {border: 0px solid}
+    100% {border: 20px solid}
 }
-/*#donothing{
-    background-color: wheat;
-    /*background-image: url(https://i.imgur.com/vSWMuFW.png);
+/* cursor */
+/*.donothing:hover{
+    cursor:auto;
 }
-#hide{
-    background-color: wheat;
-    /*background-image: url(https://i.imgur.com/Sxu9rvM.png);
+.pen:hover{
+    cursor: url(images/pen.png);
 }
-#fill{
-    background-color: wheat;
-    /*background-image: url(https://i.imgur.com/Rw8tnoD.png);
-}
-#pen{
-    background-color: wheat;
-    /*background-image: url(https://i.imgur.com/ZhlzjZf.png);
-}
-#eraser{
-    background-color: wheat;
-    /*background-image: url(https://i.imgur.com/sKlMfJw.png);
-}
-#rectangle{
-    background-color: wheat;
-    /*background-image: url(https://i.imgur.com/lbv8VDT.png);
-}
-#circle{
-    background-color: wheat;
-    /*background-image: url(https://i.imgur.com/J9hBUNp.png);
-}
-#download{
-    background-color: wheat;
-    /*background-image: url(https://i.imgur.com/U34o1RZ.png);
-}
-#sprinkle{
-    background-color: wheat;
-    /*background-image: url(https://i.imgur.com/L1USpwL.png);
+.rectangle{
+    cursor: url(images/rectangle.png) auto;
 }*/
