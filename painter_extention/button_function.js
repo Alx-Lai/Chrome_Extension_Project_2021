@@ -69,10 +69,6 @@ canvas.addEventListener("mouseup",function(e){
             new_input.style.position='absolute'+' !important';
             new_input.style.top=e.pageY;
             new_input.style.left=e.pageX;
-            console.log(e.pageY);
-            console.log(e.pageX);
-            console.log(new_input.style.top);
-            console.log(new_input.style.left);
             new_input_close_button.className='input_close_button';
             new_input_close_button.id='input_close_button'+input_id_counter;
             main_wrapper.appendChild(new_input_container);
@@ -230,3 +226,52 @@ color_picker.addEventListener('change',()=>{
     ctx.fillStyle = c_temp;
     ctx.strokeStyle = c_temp;
 });
+
+
+
+/**
+* Drag Element part
+**/
+// Make the DIV element draggable:
+//dragElement();
+dragElement(tool_wrapper);
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (button_move) {
+    // if present, the header is where you move the DIV from:
+    button_move.onmousedown = dragMouseDown;
+  } else {
+    // otherwise, move the DIV from anywhere inside the DIV:
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}

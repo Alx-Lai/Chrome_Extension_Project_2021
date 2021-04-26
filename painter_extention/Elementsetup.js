@@ -23,7 +23,7 @@ function createELE(tag,classname,id){
 }
 var main_wrapper = createELE("div","main_wrapper","");
 var tool_wrapper = createELE("div","tool_wrapper","");
-var button_hide_toolbar = createELE("div","Button","hide_toolbar");
+var button_move = createELE("div","Button","move");
 var button_donothing = createELE("div","Button","donothing");
 var button_download = createELE("div","Button","download");
 var button_hide = createELE("div","Button","hide");
@@ -38,7 +38,7 @@ var button_clean = createELE('div',"Button",'clean');
 var button_save = createELE("div","Button","save");
 var button_clear_storage = createELE('div',"Button","clearAll");
 var color_picker = createELE('input','','color_picker');
-button_hide_toolbar.textContent = '現';
+button_move.textContent = '拖';
 button_donothing.textContent='無';
 button_download.textContent='載';
 button_hide.textContent='藏';
@@ -55,7 +55,7 @@ button_clear_storage.textContent ='清存';
 tool_wrapper.style.zIndex='999998';
 color_picker.setAttribute('type','color');
 main_wrapper.style.position='';
-tool_wrapper.appendChild(button_hide_toolbar);
+tool_wrapper.appendChild(button_move);
 tool_wrapper.appendChild(button_donothing);
 tool_wrapper.appendChild(button_download);
 tool_wrapper.appendChild(button_hide);

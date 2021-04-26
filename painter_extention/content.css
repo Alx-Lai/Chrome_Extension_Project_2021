@@ -36,7 +36,7 @@
 
 .Button:hover{
     opacity: 0.3 !important;
-    cursor: pointer !important;
+    cursor: pointer;
 }
 .Text{
     margin: 0 auto;
@@ -116,6 +116,9 @@
     100% {border: 20px solid}
 }
 /* cursor */
+#move{
+    cursor: grab;
+}
 /*.donothing:hover{
     cursor:auto;
 }
